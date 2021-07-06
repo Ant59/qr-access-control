@@ -1,0 +1,2 @@
+[workspace]
+members = ["qr-reader", "qr-issuer"]
