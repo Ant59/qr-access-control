@@ -1,19 +1,22 @@
 use opencv::{
     highgui::{named_window, WINDOW_AUTOSIZE, imshow, wait_key},
     core::{Mat, MatTraitManual},
-    objdetect::QRCodeDetector,
+    objdetect::{
+        QRCodeDetector,
+        QRCodeDetectorTrait,
+    },
     videoio::{
         VideoCapture,
         VideoCaptureTrait,
-        VideoWriter,
         CAP_GSTREAMER,
     },
     Result,
     types::{VectorOfMat, VectorOfPoint, VectorOfString},
-    objdetect::QRCodeDetectorTrait,
 };
-use std::sync::mpsc::{channel, sync_channel, TrySendError};
-use std::thread::spawn;
+use std::{
+    sync::mpsc::sync_channel,
+    thread::spawn,
+};
 
 fn main() -> Result<()> {
     let window = "video capture";
