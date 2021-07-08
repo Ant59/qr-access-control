@@ -23,6 +23,7 @@ jobs:
     - name: Build
       run: cargo build --verbose
     - name: Output
+      if: always()
       run: grep -r detect_and_decode_multi ~/.cargo
     - name: Run tests
       run: cargo test --verbose
