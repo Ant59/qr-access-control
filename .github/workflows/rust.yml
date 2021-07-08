@@ -22,5 +22,7 @@ jobs:
       run: sudo apt install -y libopencv-dev clang libclang-dev
     - name: Build
       run: cargo build --verbose
+    - name: Output
+      run: grep -r detect_and_decode_multi ~/.cargo
     - name: Run tests
       run: cargo test --verbose
