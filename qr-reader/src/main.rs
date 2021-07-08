@@ -49,7 +49,7 @@ fn main() -> Result<()> {
     });
 
     loop {
-        let mut frame = rx.recv().unwrap();
+        let frame = rx.recv().unwrap();
 
         let mut rects = VectorOfPoint::default();
         let mut data = VectorOfString::default();
@@ -60,7 +60,7 @@ fn main() -> Result<()> {
             println!("{}", value);
         }
 
-        imshow(window, &mut frame)?;
+        imshow(window, &frame)?;
 
         let key = wait_key(10)?;
         if key > 0 && key != 255 && key != 235 {

@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Output Rust version
+      run: rustc --version
     - name: Setup OpenCV
       run: sudo apt install -y libopencv-dev clang libclang-dev
     - name: Build
