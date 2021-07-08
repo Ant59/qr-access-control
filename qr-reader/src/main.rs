@@ -54,7 +54,7 @@ fn main() -> Result<()> {
         let mut rects = VectorOfPoint::default();
         let mut data = VectorOfString::default();
         let mut codes = VectorOfMat::default();
-        QRCodeDetectorTrait::detect_and_decode_multi(&detector, &frame, &mut data, &mut rects, &mut codes)?;
+        detector.detect_and_decode_multi(&frame, &mut data, &mut rects, &mut codes)?;
 
         for value in &data {
             println!("{}", value);
